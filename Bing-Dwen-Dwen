@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="weixichen" content="薇汐晨">
+    <title>冰墩墩</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        .ice {
+            width: 198px;
+            margin: 30px auto;
+            position: relative;
+        }
+        
+        .main-body {
+            width: 198px;
+            height: 232px;
+            background: #fff;
+            border: 2px solid #333;
+            border-radius: 47% 47% 47% 47%/50%;
+        }
+        
+        .ear {
+            width: 37px;
+            height: 37px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            left: 18px;
+            top: 6px;
+            z-index: -1;
+        }
+        
+        .ear.right {
+            left: unset;
+            right: 18px;
+        }
+        
+        .arm-left {
+            width: 71px;
+            height: 31px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            left: -22%;
+            top: 54%;
+            z-index: -1;
+            transform: rotate(302deg);
+        }
+        
+        .arm-right {
+            width: 71px;
+            height: 31px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            right: -23%;
+            top: 28%;
+            z-index: -1;
+            transform: rotate(300deg);
+        }
+        
+        .hand-left {
+            width: 27px;
+            height: 30px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            left: -16%;
+            top: 63%;
+            z-index: -1;
+        }
+        
+        .hand-right {
+            width: 30px;
+            height: 28px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            right: -17%;
+            top: 19%;
+            z-index: -1;
+        }
+        
+        .heart {
+            position: relative;
+            transform: scale(0.045, 0.045) rotate(61deg);
+            left: 123px;
+            top: 53px;
+        }
+        
+        .div1 {
+            position: fixed;
+            top: -26px;
+            left: 100px;
+            height: 0px;
+            width: 0px;
+            border: 100px solid #e51b1b;
+            border-radius: 100px;
+        }
+        
+        .div2 {
+            position: fixed;
+            top: 100px;
+            left: -26px;
+            height: 0px;
+            width: 0px;
+            border: 100px solid #e51b1b;
+            border-radius: 100px;
+        }
+        
+        .div3 {
+            position: fixed;
+            top: 100px;
+            left: 100px;
+            height: 0px;
+            width: 0px;
+            border: 100px solid #e51b1b;
+        }
+        
+        .leg {
+            width: 48px;
+            height: 78px;
+            background: #000;
+            border-radius: 32%/55%;
+            position: absolute;
+            left: 19%;
+            bottom: -9%;
+            z-index: -1;
+        }
+        
+        .foot {
+            width: 37px;
+            height: 15px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            left: 23%;
+            top: 104%;
+            z-index: -1;
+        }
+        
+        .leg.right {
+            left: unset;
+            right: 19%;
+            bottom: -9%;
+        }
+        
+        .foot.right {
+            left: unset;
+            right: 23%;
+            top: 104%;
+        }
+        
+        .face {
+            width: 74%;
+            height: 120px;
+            margin: 24px auto;
+            position: relative;
+            border: 1px solid #125af5;
+            border-radius: 50% 50% 38% 38%;
+            box-shadow: 0 0 0 0.5px #ffffff, 0 0 0 1.2px black, 0 0 0 2.1px #ffffff, 0 0 0 3px rgb(47 245 47), 0 0 0 4px #ffffff, 0 0 0 5px yellow, 0 0 0 6px #ffffff, 0 0 0 6.8px red, 0 0 0 7.6px #ffffff, 0 0 0 8.4px pink, 0 0 0 9.2px #ffffff, 0 0 0 9.9px #9e02f8;
+        }
+        
+        .face-circle {
+            width: 72%;
+            height: 122px;
+            margin: 25px 26px auto;
+            position: absolute;
+            border: 1px solid black;
+            border-radius: 50% 50% 57% 58%;
+            z-index: 1;
+            opacity: 0.5;
+            box-shadow: 0 0 0 0.5px #ffffff, 0 0 0 1.2px rgb(22 134 226), 0 0 0 2.1px #ffffff, 0 0 0 3px rgb(243 13 128), 0 0 0 4px #ffffff, 0 0 0 5px rgb(245 135 32), 0 0 0 6px #ffffff, 0 0 0 6.8px rgb(167 22 235), 0 0 0 7.6px #ffffff, 0 0 0 8.4px rgb(71 250 167), 0 0 0 9.2px #ffffff, 0 0 0 9.9px #fddc47;
+        }
+        
+        .blackeye {
+            width: 41px;
+            height: 64px;
+            background: #000;
+            top: 18%;
+            left: 8%;
+            border-radius: 46% 49% 47% 50%;
+            position: absolute;
+            transform: rotate(44deg);
+        }
+        
+        .blackeye.right {
+            left: unset;
+            right: 8%;
+            border-radius: 49% 46% 50% 47%;
+            transform: rotate(-44deg);
+        }
+        
+        .eye {
+            width: 22px;
+            height: 24px;
+            background: #000;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            position: relative;
+            transform: rotate(-45deg);
+            top: 13px;
+            left: 13px;
+        }
+        
+        .eye1 {
+            width: 7px;
+            height: 8px;
+            position: relative;
+            border-radius: 50% 50% 50% 50%;
+            box-shadow: 0px 0px 5px 4px #a6c3cd;
+            -moz-box-shadow: 0 0 16px #DDD;
+            -webkit-box-shadow: 1 22 22px #ddd;
+            background: linear-gradient(-40deg, rgb(60 54 62) 0%, rgb(57 56 68) 52%, rgb(48 66 88) 100%);
+            opacity: 0.6;
+            top: 6px;
+            left: 5.5px;
+        }
+        
+        .eye2 {
+            width: 5px;
+            height: 5px;
+            top: -6px;
+            left: 9px;
+            border-radius: 50%;
+            background: white;
+            position: relative;
+        }
+        
+        .eye3 {
+            width: 3px;
+            height: 3px;
+            top: 1px;
+            left: 5px;
+            border-radius: 50%;
+            background: #91e3f58f;
+            position: relative;
+        }
+        
+        .eye4 {
+            width: 1.5px;
+            height: 3.5px;
+            top: -13px;
+            left: 2px;
+            border-radius: 50%;
+            background: #d0f7f3a8;
+            transform: rotate(30deg);
+            position: relative;
+        }
+        
+        .eye5 {
+            width: 7px;
+            height: 8px;
+            position: relative;
+            border-radius: 50% 50% 50% 50%;
+            box-shadow: 0px 0px 5px 4px #a6c3cd;
+            -moz-box-shadow: 0 0 16px #DDD;
+            -webkit-box-shadow: 1 22 22px #ddd;
+            background: linear-gradient(-40deg, rgb(60 54 62) 0%, rgb(57 56 68) 52%, rgb(48 66 88) 100%);
+            opacity: 0.6;
+            top: -3px;
+            left: 12.5px;
+            transform: rotate(45deg);
+        }
+        
+        .eye6 {
+            width: 5px;
+            height: 5px;
+            top: -12px;
+            left: 19px;
+            border-radius: 50%;
+            background: white;
+            position: relative;
+        }
+        
+        .eye7 {
+            width: 3px;
+            height: 3px;
+            top: -11px;
+            left: 9px;
+            border-radius: 50%;
+            background: #91e3f58f;
+            position: relative;
+        }
+        
+        .eye8 {
+            width: 1.5px;
+            height: 3.5px;
+            top: -25px;
+            left: 14px;
+            border-radius: 50%;
+            background: #d0f7f3a8;
+            transform: rotate(30deg);
+            position: relative;
+            transform: rotate(70deg);
+        }
+        
+        .eye.right {
+            top: 13px;
+            left: 5px;
+            transform: rotate(45deg);
+        }
+        
+        .nose {
+            width: 15px;
+            height: 11px;
+            top: 44%;
+            left: 50%;
+            border-radius: 50% 50% 60% 60%/50% 50% 70% 70%;
+            position: absolute;
+            background-color: #000;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .nose-light {
+            width: 5px;
+            height: 10px;
+            top: -1.5px;
+            left: 5px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, rgb(144 153 155) 0%, rgb(0 0 0) 100%);
+            transform: rotate(90deg);
+            position: relative;
+        }
+        
+        .mouth {
+            width: 31px;
+            height: 16px;
+            top: 50%;
+            left: 50%;
+            box-shadow: inset 0em -0.15em 0px 0em black;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            transform: translateX(-50%);
+        }
+        
+        .tongue {
+            width: 2px;
+            height: 12px;
+            top: 8.8px;
+            left: 14.6px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, rgb(245 10 10) 0%, rgb(106 12 12) 100%);
+            transform: rotate(90deg);
+            position: relative;
+        }
+        
+        .logo {
+            margin: -24px auto 0;
+            text-align: center;
+            display: block;
+        }
+        
+        .logo img {
+            border-radius: 50%;
+            top: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ice">
+        <div class="ear"></div>
+        <div class="ear right"></div>
+        <div class="arm-left"></div>
+        <div class="arm-right"></div>
+        <div class="hand-left"></div>
+        <div class="hand-right"></div>
+        <div class="heart">
+            <div class="div1"></div>
+            <div class="div2"></div>
+            <div class="div3"></div>
+        </div>
+        <div class="foot"></div>
+        <div class="foot right"></div>
+        <div class="leg"></div>
+        <div class="leg right"></div>
+        <div class="main-body">
+            <div class="face-circle"></div>
+            <div class="face">
+                <div class="blackeye">
+                    <div class="eye">
+                        <div class="eye1"></div>
+                        <div class="eye2"></div>
+                        <div class="eye3"></div>
+                        <div class="eye4"></div>
+                    </div>
+                </div>
+                <div class="blackeye right">
+                    <div class="eye right"></div>
+                    <div class="eye5"></div>
+                    <div class="eye6"></div>
+                    <div class="eye7"></div>
+                    <div class="eye8"></div>
+                </div>
+                <div class="nose">
+                    <div class="nose-light"></div>
+                </div>
+                <div class="mouth">
+                    <div class="tongue"></div>
+                </div>
+            </div>
+            <div class="logo">
+                <img src="冬奥会logo.png" width="120px">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
